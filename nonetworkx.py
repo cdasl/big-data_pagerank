@@ -206,6 +206,9 @@ def GetFinalResult(trans, pagerank):
     ff.close()
 
 def SortPageRank(filename):
+    '''
+    排序
+    '''
     s = dict()
     with open(filename, "r", encoding="utf8") as f:
         for line in f:
