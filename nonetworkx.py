@@ -205,6 +205,17 @@ def GetFinalResult(trans, pagerank):
         print(originalData[i], pagerank[i], file=ff)
     ff.close()
 
+def SortPageRank(filename):
+    s = dict()
+    with open(filename, "r", encoding="utf8") as f:
+        for line in f:
+            s[line.split()[0]] = float(line.split()[1])
+    ss = sorted(s.items(), key=lambda item: item[1], reverse=True)
+    ff = open("sort.txt", "w", encoding="utf8")
+    for i in range(100):
+        print(ss[i][0], ss[i][1], file=ff)
+    ff.close()
+
 
 
 if __name__ == "__main__":
@@ -251,3 +262,4 @@ if __name__ == "__main__":
         if sim >= 0.9999:
             break
     GetFinalResult("trans.txt", "pagerank.txt")
+    SortPageRank("finalResult.txt")
