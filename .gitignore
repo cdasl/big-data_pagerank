@@ -107,4 +107,6 @@ venv.bak/
 *.txt
 !WikiData.txt
 .vscode
+/block/
+/oldrank/
 
